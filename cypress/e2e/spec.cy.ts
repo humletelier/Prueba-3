@@ -16,10 +16,10 @@ describe('e2e', () => {
 
   //PROCEDIMIENTO PARA LAS 7 PRUEBAS
 
-  //Probando el boton about con una de sus propiedas
   it('Prueba 1', () => {
     //2 Segundos de espera
     cy.wait(2000);
+    //Pincha en la opcion about
     cy.get("[tab='about']").click();
     //2 Segundos de espera
     cy.wait(2000);
@@ -43,7 +43,7 @@ describe('e2e', () => {
     cy.visit('http://localhost:8100/app/tabs/about');
     //2 Segundos de espera
     cy.wait(2000);
-    //Verificar que lapagina es Madison WI
+    //Verificar que la pagina es Madison WI
     cy.get('.item-interactive > .ng-untouched')
       .should('not.have.text', 'WIAustin, TXChicago, ILSeattle, WA');
     //2 Segundos de espera
@@ -68,15 +68,15 @@ describe('e2e', () => {
     //2 Segundos de espera
     cy.wait(2000);
     //La imagen del banner debe ser “madison” en la primera carga de la aplicación.
-    cy.get('div>div')
+    cy.get('div')
       .not('[ng-reflect-ng-style="false"]')
       .should('have.class', 'about-image madison');
     //2 Segundos de espera
     cy.wait(2000);
   });
 
-  //PRUEBA NUMERO 4
   it('Prueba 4', () => {
+    //Visita la pagina about
     cy.visit('http://localhost:8100/app/tabs/about');
     //2 Segundos de espera
     cy.wait(2000);
@@ -137,7 +137,7 @@ describe('e2e', () => {
     //2 Segundos de espera
     cy.wait(2000);
     //Verifica que la imagen que esta en el momento sea la que se eligio en la opcion location
-    cy.get('div>div')
+    cy.get('div')
       .not('[ng-reflect-ng-style="false"]')
       .should('have.class', 'about-image austin');
     //2 Segundos de espera
@@ -150,7 +150,7 @@ describe('e2e', () => {
       .click();
     //2 Segundos de espera
     cy.wait(2000);
-    //Selecciona la opcion de Austin TX
+    //Selecciona la opcion de Chicago IL
     cy.get('#alert-input-3-2')
       .should('have.text', 'Chicago, IL')
       .click();
@@ -163,7 +163,7 @@ describe('e2e', () => {
     //2 Segundos de espera
     cy.wait(2000);
     //Verifica que la imagen que esta en el momento sea la que se eligio en la opcion location
-    cy.get('div>div')
+    cy.get('div')
       .not('[ng-reflect-ng-style="false"]')
       .should('have.class', 'about-image chicago');
     //2 Segundos de espera
@@ -176,7 +176,7 @@ describe('e2e', () => {
       .click();
     //2 Segundos de espera
     cy.wait(2000);
-    //Selecciona la opcion de Austin TX
+    //Selecciona la opcion de Seattle WA
     cy.get('#alert-input-4-3')
       .should('have.text', 'Seattle, WA')
       .click();
@@ -189,7 +189,7 @@ describe('e2e', () => {
     //2 Segundos de espera
     cy.wait(2000);
     //Verifica que la imagen que esta en el momento sea la que se eligio en la opcion location
-    cy.get('div>div').not('[ng-reflect-ng-style="false"]')
+    cy.get('div').not('[ng-reflect-ng-style="false"]')
       .should('have.class', 'about-image seattle');
     //2 Segundos de espera
     cy.wait(2000);
@@ -201,7 +201,7 @@ describe('e2e', () => {
       .click();
     //2 Segundos de espera
     cy.wait(2000);
-    //Selecciona la opcion de Austin TX
+    //Selecciona la opcion de Madison WI
     cy.get('#alert-input-5-0')
       .should('have.text', 'Madison, WI')
       .click();
@@ -214,7 +214,7 @@ describe('e2e', () => {
     //2 Segundos de espera
     cy.wait(2000);
     //Verifica que la imagen que esta en el momento sea la que se eligio en la opcion location
-    cy.get('div>div')
+    cy.get('div')
       .not('[ng-reflect-ng-style="false"]')
       .should('have.class', 'about-image madison');
     //2 Segundos de espera
